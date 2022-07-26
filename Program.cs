@@ -2,15 +2,15 @@
 
 string[] CreateStringArray() //Создание массива.
 {
-    string[] words = new string[size];
+    string[] arraywords = new string[size];
 
     for (int i = 0; i<size; i=i+1)
     {
         Console.Write($"Input word {i+1}: ");
-        words[i] = Console.ReadLine();
+        arraywords[i] = Console.ReadLine();
     }
     Console.WriteLine();
-    return words;
+    return arraywords;
 }
 
 string[] MainMethodSortReturn(string[] array) // Поиск и возврат элементов массива с количеством символов не более 3.
@@ -27,7 +27,7 @@ string[] MainMethodSortReturn(string[] array) // Поиск и возврат э
 
 void ShowArray(string[] array) // Вывод созданного массива.
 {
-    for (int i = 0; i<size; i++)
+    for (int i = 0; i<size; i=i+1)
         Console.Write (array[i] + " ");
     Console.WriteLine();
 }
