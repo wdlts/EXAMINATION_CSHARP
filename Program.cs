@@ -31,3 +31,7 @@ void ShowArray(string[] array)
         Console.Write (array[i] + " ");
     Console.WriteLine();
 }
+
+string[] array = CreateStringArray();
+ShowArray(array);
+MainMethodSortReturn(array);
