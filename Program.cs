@@ -1,6 +1,6 @@
 ﻿int size = 5; // Для экономии времени и во избежание ошибок при вводе размера массива пользователем, изначально задан размер массива 5.
 
-string[] CreateStringArray(int size) //Создание массива.
+string[] CreateStringArray(int size) // Создание массива.
 {
     string[] arraywords = new string[size];
 
@@ -13,19 +13,15 @@ string[] CreateStringArray(int size) //Создание массива.
     return arraywords;
 }
 
-string[] MainMethodSortReturn(string[] array) // Поиск и возврат элементов массива с количеством символов не более 3.
+string[] MainMethodSortReturn(string[] array) // Поиск и запись элементов массива с количеством символов не более 3.
 {
-    
-    
-    for (int i = 0; i<size; i= i+1)
+    for (int i = 0; i<size; i=i+1)
         if (array[i].Length<=3)
         {
             Console.Write (array[i] + " ");
-            
         }
         Console.WriteLine();
-        return array;
-            
+    return array;
 }
 
 void ShowArray(string[] array) // Вывод созданного массива.
@@ -35,6 +31,6 @@ void ShowArray(string[] array) // Вывод созданного массива
     Console.WriteLine();
 }
 
-string[] array = CreateStringArray();
+string[] array = CreateStringArray(size);
 ShowArray(array);
 MainMethodSortReturn(array);
