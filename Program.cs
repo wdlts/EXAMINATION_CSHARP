@@ -1,6 +1,6 @@
 ﻿int size = 5; // Для экономии времени и во избежание ошибок при вводе размера массива пользователем, изначально задан размер массива 5.
 
-string[] CreateStringArray() //Создание массива.
+string[] CreateStringArray(int size) //Создание массива.
 {
     string[] arraywords = new string[size];
 
@@ -15,10 +15,13 @@ string[] CreateStringArray() //Создание массива.
 
 string[] MainMethodSortReturn(string[] array) // Поиск и возврат элементов массива с количеством символов не более 3.
 {
+    
+    
     for (int i = 0; i<size; i= i+1)
         if (array[i].Length<=3)
         {
             Console.Write (array[i] + " ");
+            
         }
         Console.WriteLine();
         return array;
