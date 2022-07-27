@@ -8,7 +8,6 @@ string[] CreateStringArray(int size) // Создание массива.
     {
         Console.Write($"Input word {i+1}: ");
         arraywords[i] = Console.ReadLine();
-        
     }
     Console.WriteLine();
     return arraywords;
@@ -19,7 +18,7 @@ void ShowArray(string[] array) // Вывод созданного массива
 {
     for (int i = 0; i<size; i++)
     {
-        Console.Write(array[i]);
+        Console.Write(array[i]+" ");
     }
     Console.WriteLine();
 }
@@ -31,7 +30,7 @@ string PrintToFile(string[] array)
     string output = String.Empty;
     for (int i = 0; i < length; i++)
     {
-        output += ($"{array[i]}");
+        output += ($"{array[i]}"+" ");
     }
     return output;
 }
