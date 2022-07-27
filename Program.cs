@@ -4,7 +4,7 @@ string[] CreateStringArray(int size) // Создание массива.
 {
     string[] arraywords = new string[size];
 
-    for (int i = 0; i<size; i=i+1)
+    for (int i = 0; i<size; i++)
     {
         Console.Write($"Input word {i+1}: ");
         arraywords[i] = Console.ReadLine();
@@ -16,7 +16,7 @@ string[] CreateStringArray(int size) // Создание массива.
 
 void ShowArray(string[] array) // Вывод созданного массива в консоль.
 {
-    for (int i = 0; i<size; i=i+1)
+    for (int i = 0; i<size; i++)
     {
         Console.Write(array[i] + " ");
     }
@@ -28,7 +28,7 @@ string[] MainMethodSortReturn(string[] inputArray) // Поиск элемент�
 {
     string[] outputArray = new string[size];
     int index = 0;
-    for (int i = 0; i<size; i=i+1)
+    for (int i = 0; i<size; i++)
         if (inputArray[i].Length<=3)
         {
             outputArray[index] = inputArray[i];
