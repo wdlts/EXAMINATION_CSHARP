@@ -7,7 +7,7 @@ string[] CreateStringArray(int size) // Создание массива.
     for (int i = 0; i<size; i++)
     {
         Console.Write($"Input word {i+1}: ");
-        arraywords[i] = Console.ReadLine();
+        arraywords[i] = Console.ReadLine()  + " ";
     }
     Console.WriteLine();
     return arraywords;
@@ -18,9 +18,21 @@ void ShowArray(string[] array) // Вывод созданного массива
 {
     for (int i = 0; i<size; i++)
     {
-        Console.Write(array[i] + " ");
+        Console.Write(array[i]);
     }
     Console.WriteLine();
+}
+
+
+string PrintToFile(string[] array)
+{
+    int length = array.Length;
+    string output = String.Empty;
+    for (int i = 0; i < length; i++)
+    {
+        output += ($"{array[i]}");
+    }
+    return output;
 }
 
 
@@ -44,11 +56,7 @@ string[] inputArray = CreateStringArray(size);
 ShowArray(inputArray);
 string[] outputArray = MainMethodSortReturn(inputArray);
 ShowArray(outputArray);
-
-
-
-
-//string[] array2 = MainMethodSortReturn(array);
-//ShowArray(array2);
-
-
+Console.WriteLine($"input {inputArray + " "}");
+File.WriteAllText("input.txt", PrintToFile(inputArray));
+Console.WriteLine($"output {outputArray + " "}");
+File.WriteAllText("output.txt", PrintToFile(outputArray));
