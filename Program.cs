@@ -7,7 +7,8 @@ string[] CreateStringArray(int size) // Создание массива.
     for (int i = 0; i<size; i++)
     {
         Console.Write($"Input word {i+1}: ");
-        arraywords[i] = Console.ReadLine()  + " ";
+        arraywords[i] = Console.ReadLine();
+        
     }
     Console.WriteLine();
     return arraywords;
