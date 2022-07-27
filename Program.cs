@@ -13,24 +13,42 @@ string[] CreateStringArray(int size) // Создание массива.
     return arraywords;
 }
 
-string[] MainMethodSortReturn(string[] array) // Поиск и запись элементов массива с количеством символов не более 3.
-{
-    for (int i = 0; i<size; i=i+1)
-        if (array[i].Length<=3)
-        {
-            Console.Write (array[i] + " ");
-        }
-        Console.WriteLine();
-    return array;
-}
 
-void ShowArray(string[] array) // Вывод созданного массива.
+void ShowArray(string[] array) // Вывод созданного массива в консоль.
 {
     for (int i = 0; i<size; i=i+1)
-        Console.Write (array[i] + " ");
+    {
+        Console.Write(array[i] + " ");
+    }
     Console.WriteLine();
 }
 
-string[] array = CreateStringArray(size);
-ShowArray(array);
-MainMethodSortReturn(array);
+
+string[] MainMethodSortReturn(string[] inputArray) // Поиск элементов массива с количеством символов не более 3 и возврат массива из найденных элементов.
+{
+    string[] outputArray = new string[size];
+    int index = 0;
+    for (int i = 0; i<size; i=i+1)
+        if (inputArray[i].Length<=3)
+        {
+            outputArray[index] = inputArray[i];
+            index += 1;
+        }
+        Console.WriteLine();
+    return outputArray;
+}
+
+
+
+string[] inputArray = CreateStringArray(size);
+ShowArray(inputArray);
+string[] outputArray = MainMethodSortReturn(inputArray);
+ShowArray(outputArray);
+
+
+
+
+//string[] array2 = MainMethodSortReturn(array);
+//ShowArray(array2);
+
+
