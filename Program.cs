@@ -1,66 +1,62 @@
-﻿int size = 5; // Для экономии времени и во избежание ошибок при вводе размера массива пользователем, изначально задан размер массива 5.
+﻿// 0. Начальный массив строк. Задан на старте программы, без пользовательского ввода во избежание пользовательских ошибок.
 
-// 1. Метод создания/заполнения массива..
-string[] CreateStringArray(int size) 
+string[] NewArray = new string [] { "Sunday", "Mon", "Tuesday", "Wed", "Thursday", "Fri", "-2", ":-)" };
+
+// 1. Метод подсчета элементов массива.
+
+int CountElements(string[] inputArray)
 {
-    string[] arraywords = new string[size];
-
-    for (int i = 0; i<size; i++)
+    int result = 0;
+    int length = inputArray.Length;
+    for (int i=0; i<length; i++)
     {
-        Console.Write($"Input word {i+1}: ");
-        arraywords[i] = Console.ReadLine()+"";
+        if (inputArray[i].Length <= 3) result++;
     }
-    Console.WriteLine();
-    return arraywords;
+    return result;
 }
+
 
 // 2. Основная задача. Метод поиска элементов с длиной не более 3 символов.
 
-string[] MainMethodSortReturn(string[] inputArray) // Поиск элементов массива с количеством символов не более 3 и возврат массива из найденных элементов.
+string[] MainMethodSortReturn(string[] inArray)
 {
-    string[] outputArray = new string[size];
+    int inArrayLength = CountElements(inArray);
+    string[] outArray = new string[inArrayLength];
     int index = 0;
-    for (int i = 0; i<size; i++)
-        if (inputArray[i].Length<=3)
+    int i;
+    int length = inArray.Length;
+    for (i = 0; i<length; i++)
+        if (inArray[i].Length<=3)
         {
-            outputArray[index] = inputArray[i];
+            outArray[index] = inArray[i];
             index += 1;
         }
-        Console.WriteLine();
-    return outputArray;
-}
-
-// 3. Методы вывода массива.
-
-// 3.1 Метод вывода в консоль.
-
-void ShowArray(string[] array) // Вывод созданного массива в консоль.
-{
-    for (int i = 0; i<size; i++)
-    {
-        Console.Write(array[i]+" ");
-    }
     Console.WriteLine();
+    return outArray;
 }
 
-// 3.2 Метод вывода в файл.
+// 3. Метод печати. 
 
-string PrintToFile(string[] array)
+string PrintArray(string[] array)
 {
     int length = array.Length;
     string output = String.Empty;
+    
     for (int i = 0; i < length; i++)
     {
-        output += ($"{array[i]}"+" ");
+        output = output + array[i]+" ";
     }
+    int arrayLength = output.Length;
     return output;
 }
 
-// 4. Вывод данных в терминал и файлы.
+// 4. Вывод данных в терминал.
 
-string[] inputArray = CreateStringArray(size);
-ShowArray(inputArray);
+string[] inputArray = NewArray;
+string input = PrintArray(inputArray);
+Console.WriteLine(input);
+
 string[] outputArray = MainMethodSortReturn(inputArray);
-ShowArray(outputArray);
-File.WriteAllText("input.txt", PrintToFile(inputArray));
-File.WriteAllText("output.txt", PrintToFile(outputArray));
+string output = PrintArray(outputArray);
+Console.WriteLine(output);
+
